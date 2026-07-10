@@ -1,0 +1,125 @@
+/* Popup Dictionary (JA <-> EN) */
+
+.popup-dict-pop {
+  position: fixed;
+  z-index: var(--layer-menu, 1000);
+  max-width: min(420px, 92vw);
+  max-height: min(60vh, 520px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  border: 1px solid var(--background-modifier-border);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.28);
+  font-size: var(--pd-font-size, 14px);
+  line-height: 1.5;
+  -webkit-overflow-scrolling: touch;
+}
+
+.popup-dict-pop .pd-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 0 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.popup-dict-pop .pd-src {
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 0.85em;
+}
+
+.popup-dict-pop .pd-close {
+  cursor: pointer;
+  color: var(--text-faint);
+  padding: 0 4px;
+  font-size: 1.1em;
+  line-height: 1;
+}
+.popup-dict-pop .pd-close:hover { color: var(--text-normal); }
+
+.popup-dict-pop .pd-entry {
+  padding: 6px 0;
+  border-top: 1px solid var(--background-modifier-border-hover);
+}
+.popup-dict-pop .pd-entry:first-of-type { border-top: none; }
+
+.popup-dict-pop .pd-term {
+  font-size: 1.15em;
+  font-weight: 700;
+  color: var(--text-normal);
+}
+
+.popup-dict-pop .pd-reading {
+  margin-left: 8px;
+  font-size: 0.92em;
+  color: var(--text-accent);
+  font-weight: 500;
+}
+
+.popup-dict-pop .pd-common {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 0.68em;
+  font-weight: 700;
+  color: var(--text-on-accent, #fff);
+  background: var(--text-accent);
+  border-radius: 4px;
+  padding: 1px 5px;
+  vertical-align: middle;
+}
+
+.popup-dict-pop ol.pd-senses {
+  margin: 4px 0 0;
+  padding-left: 1.3em;
+}
+.popup-dict-pop ol.pd-senses li { margin: 2px 0; }
+
+.popup-dict-pop .pd-pos {
+  display: inline-block;
+  margin-right: 5px;
+  font-size: 0.72em;
+  color: var(--text-muted);
+  background: var(--background-modifier-hover);
+  border-radius: 4px;
+  padding: 0 5px;
+  white-space: nowrap;
+}
+.popup-dict-pop .pd-field {
+  color: var(--color-green, #3aa675);
+  background: transparent;
+  border: 1px solid currentColor;
+}
+.popup-dict-pop .pd-misc {
+  color: var(--text-faint);
+}
+
+.popup-dict-pop .pd-gloss { color: var(--text-normal); }
+.popup-dict-pop .pd-info {
+  display: block;
+  font-size: 0.82em;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.popup-dict-pop .pd-note {
+  color: var(--text-muted);
+  font-size: 0.85em;
+}
+
+.popup-dict-pop .pd-empty {
+  color: var(--text-muted);
+  padding: 2px 0;
+}
+
+.popup-dict-pop .pd-more {
+  margin-top: 6px;
+  color: var(--text-faint);
+  font-size: 0.82em;
+  text-align: center;
+}
