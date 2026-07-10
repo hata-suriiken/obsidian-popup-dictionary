@@ -1,4 +1,4 @@
-# Popup Dictionary (JA ⇄ EN) — offline
+# JMdict Popup Dictionary (JA ⇄ EN) — offline
 
 Obsidian用のオフライン英和・和英ポップアップ辞書。単語を選択すると読み・意味を
 ポップアップ表示します。ネット接続不要。デスクトップ／モバイル（iPad）対応。

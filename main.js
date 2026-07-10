@@ -397,7 +397,7 @@ class PopupDictionaryPlugin extends obsidian.Plugin {
       const n = this.index.entries.length.toLocaleString();
       new obsidian.Notice(`辞書を読み込みました（${n} 語）`);
     } catch (err) {
-      console.error('[popup-dictionary] failed to load dict.json', err);
+      console.error('[jmdict-popup-dictionary] failed to load dict.json', err);
       new obsidian.Notice('辞書データ (dict.json) を読み込めませんでした。プラグインフォルダを確認してください。');
     } finally {
       this.loading = false;

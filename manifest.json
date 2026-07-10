@@ -1,6 +1,6 @@
 {
-  "id": "popup-dictionary",
-  "name": "Popup Dictionary (JA ⇄ EN)",
+  "id": "jmdict-popup-dictionary",
+  "name": "JMdict Popup Dictionary (JA ⇄ EN)",
   "version": "0.2.0",
   "minAppVersion": "1.4.0",
   "description": "Offline pop-up Japanese⇄English dictionary powered by JMdict. Select a word to see readings and meanings. Works on desktop and mobile.",
