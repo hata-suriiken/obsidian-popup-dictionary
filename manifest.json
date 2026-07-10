@@ -1,7 +1,7 @@
 {
   "id": "jmdict-popup-dictionary",
   "name": "JMdict Popup Dictionary (Japanese-English)",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "minAppVersion": "1.4.0",
   "description": "Offline pop-up Japanese-English dictionary powered by JMdict. Select a word to see readings and meanings. Works on desktop and mobile.",
   "author": "hata-suriiken",
