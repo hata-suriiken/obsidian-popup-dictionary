@@ -22,21 +22,22 @@ required. Works on desktop and mobile (iPad).
   行った → 行く "went → go", etc.).
 
 ## Installation
-This plugin is pending review for the official Community Plugins directory. Until then:
+Install from Obsidian: **Settings → Community plugins → Browse**, search for
+"JMdict Popup Dictionary", install and enable.
 
-**Option A — [BRAT](https://github.com/TfTHacker/obsidian42-brat) (recommended for beta use)**
-Install the BRAT plugin, then use "Add a beta plugin" with this repository:
-`hata-suriiken/obsidian-popup-dictionary`.
+**Dictionary data is downloaded automatically the first time the plugin loads** (from this
+repository's [GitHub releases](https://github.com/hata-suriiken/obsidian-popup-dictionary/releases/latest);
+full ≈ 30 MB, lite ≈ 4 MB — this is the plugin's only network access, and only happens when the
+data file is missing). If the download fails (e.g. offline), run the "辞書データを再読み込み"
+(Reload dictionary data) command once you're back online, or download `dict.json` from the
+latest release yourself and place it in
+`<YourVault>/.obsidian/plugins/jmdict-popup-dictionary/`.
 
-**Option B — manual install**
-1. Download `main.js`, `manifest.json`, and `styles.css` from the
-   [latest release](https://github.com/hata-suriiken/obsidian-popup-dictionary/releases/latest).
-2. Create a folder `<YourVault>/.obsidian/plugins/jmdict-popup-dictionary/` and place the three
-   files inside it.
-3. In Obsidian, go to Settings → Community plugins and enable "JMdict Popup Dictionary".
-
-Once accepted into the directory, it will also be installable directly from Settings →
-Community plugins → Browse.
+**Manual install** (without the directory): download `main.js`, `manifest.json`, and
+`styles.css` from the
+[latest release](https://github.com/hata-suriiken/obsidian-popup-dictionary/releases/latest)
+into `<YourVault>/.obsidian/plugins/jmdict-popup-dictionary/`, then enable the plugin in
+Settings → Community plugins.
 
 ## Settings
 - Toggle auto-popup on selection (globally, and separately for PDF selections).
@@ -77,13 +78,14 @@ Obsidian用のオフライン英和・和英ポップアップ辞書（JMdict使
 ポップアップ表示します。ネット接続不要。デスクトップ／モバイル（iPad）対応。
 
 ### インストール
-コミュニティプラグイン公式ディレクトリへの登録は審査中です。それまでは:
-- **BRAT**: [BRAT](https://github.com/TfTHacker/obsidian42-brat)プラグインを導入し、「Add a beta
-  plugin」でリポジトリ `hata-suriiken/obsidian-popup-dictionary` を追加。
-- **手動**: [最新リリース](https://github.com/hata-suriiken/obsidian-popup-dictionary/releases/latest)
-  から `main.js`・`manifest.json`・`styles.css` を取得し、
-  `<Vault>/.obsidian/plugins/jmdict-popup-dictionary/` に配置。設定 → コミュニティプラグイン
-  で有効化。
+設定 → コミュニティプラグイン → 閲覧 から「JMdict Popup Dictionary」を検索してインストール・有効化。
+
+**辞書データは初回起動時に自動ダウンロードされます**（本リポジトリの
+[GitHubリリース](https://github.com/hata-suriiken/obsidian-popup-dictionary/releases/latest)から。
+full≈30MB／lite≈4MB。通信はこのダウンロードのみで、データファイルが無いときだけ実行）。
+ダウンロードに失敗した場合は、オンラインの状態で「辞書データを再読み込み」コマンドを実行するか、
+最新リリースから `dict.json` を手動で
+`<Vault>/.obsidian/plugins/jmdict-popup-dictionary/` に配置してください。
 
 ### 使い方
 - **選択でポップアップ**: エディタ／プレビューで単語を選択すると自動表示（設定でOFF可）。

@@ -389,16 +389,27 @@ class PopupDictionaryPlugin extends obsidian.Plugin {
   async loadDictionary() {
     if (this.index || this.loading) return;
     this.loading = true;
-    const path = this.manifest.dir + '/' + (this.settings.dataFile || 'dict.json');
+    const file = this.settings.dataFile || 'dict.json';
+    const path = this.manifest.dir + '/' + file;
     try {
-      const raw = await this.app.vault.adapter.read(path);
+      const adapter = this.app.vault.adapter;
+      if (!(await adapter.exists(path))) {
+        // fresh install from the community directory ships only the code;
+        // fetch the dictionary data from this plugin's own GitHub release
+        const size = file === 'dict-common.json' ? '約4MB' : '約30MB';
+        new obsidian.Notice(`辞書データ (${file}) をダウンロードしています…（初回のみ・${size}）`, 10000);
+        const url = 'https://github.com/hata-suriiken/obsidian-popup-dictionary/releases/latest/download/' + file;
+        const resp = await obsidian.requestUrl({ url });
+        await adapter.write(path, resp.text);
+      }
+      const raw = await adapter.read(path);
       const data = JSON.parse(raw);
       this.index = new DictIndex(data);
       const n = this.index.entries.length.toLocaleString();
       new obsidian.Notice(`辞書を読み込みました（${n} 語）`);
     } catch (err) {
-      console.error('[jmdict-popup-dictionary] failed to load dict.json', err);
-      new obsidian.Notice('辞書データ (dict.json) を読み込めませんでした。プラグインフォルダを確認してください。');
+      console.error('[jmdict-popup-dictionary] failed to load dictionary data', err);
+      new obsidian.Notice(`辞書データ (${file}) を読み込めませんでした。ネット接続を確認して「辞書データを再読み込み」コマンドを実行するか、GitHubリリースから ${file} を手動でプラグインフォルダに配置してください。`, 10000);
     } finally {
       this.loading = false;
     }

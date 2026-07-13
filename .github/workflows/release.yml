@@ -24,6 +24,8 @@ jobs:
             main.js
             manifest.json
             styles.css
+            dict.json
+            dict-common.json
 
       - name: Create GitHub release with attested assets
         env:
@@ -33,5 +35,5 @@ jobs:
           gh release create "$TAG" \
             --repo "$GITHUB_REPOSITORY" \
             --title "$TAG" \
-            --notes "Automated release. Release assets carry GitHub build-provenance attestations (verify with: gh attestation verify <file> --repo $GITHUB_REPOSITORY)." \
-            main.js manifest.json styles.css
+            --notes "Automated release. Release assets carry GitHub build-provenance attestations (verify with: gh attestation verify <file> --repo $GITHUB_REPOSITORY). The dict.json / dict-common.json assets are the dictionary data the plugin downloads on first launch." \
+            main.js manifest.json styles.css dict.json dict-common.json
